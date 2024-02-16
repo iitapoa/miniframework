@@ -38,6 +38,4 @@ class indexController {
     public function getClassAtual() {
         return $this->classe;
     }
-
 }
-
