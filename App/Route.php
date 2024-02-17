@@ -20,8 +20,13 @@ Class Route extends Bootstrap {
             'action' => 'sobreNos'
         );
 
+        $routes['loja'] = array(
+            'route' => '/loja',
+            'controller' => 'indexController',
+            'action' => 'loja'
+        );
+
         $this->setRoutes($routes);
     }
-
     
 }
