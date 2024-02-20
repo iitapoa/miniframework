@@ -11,9 +11,20 @@ abstract class Action {
         $this->view = new \stdClass();
     }
 
-    protected function render($view) {
+    protected function render($view, $layout) {
+        $this->view->page = $view;
+        if(file_exists("../App/Views/".$layout.".phtml")){
+            require_once "../App/Views/".$layout.".phtml";
+        } else {
+            $this->content();
+        }
+
+        
+    }
+
+    protected function content() {
         $this->setClassAtual();
-        require_once "../App/Views/".$this->getClassAtual()."/".$view.".phtml";
+        require_once "../App/Views/".$this->getClassAtual()."/".$this->view->page.".phtml";
     }
 
     protected function setClassAtual() {
