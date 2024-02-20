@@ -37,4 +37,5 @@ abstract class Action {
     protected function getClassAtual() {
         return $this->classeAtual;
     }
+    
 }
