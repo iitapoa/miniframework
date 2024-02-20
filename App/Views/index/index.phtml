@@ -5,8 +5,12 @@
     echo "<h3>Chegamos ao IndexController e disparamos a action index.</h3>";
     echo "Listando os dados: <br />";
     echo "<ul>";
-    foreach($this->view->dados as $indice => $valor) {
-        echo "<li>".$indice." => ".$valor."</li>";
+    // echo "<pre>";
+    // print_r($this->view->dados);
+    // echo "</pre>";
+    echo "<hr>";
+    foreach($this->view->dados as $indice => $aluno) {
+        echo "<li>".$aluno['matricula']." => ".$aluno['nome']."</li>";
     }
     echo "</ul>";
 ?>

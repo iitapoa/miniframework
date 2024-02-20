@@ -3,13 +3,27 @@
 namespace App\Controllers;
 
 use MF\Controller\Action;
+use App\Connection;
+use App\Models\Aluno;
+
 
 use stdClass;
 
 class indexController extends Action {
     
     public function index() {
-        $this->view->dados = array("sala 1" => "1AF", "sala 2" => "2AF", "sala 3" => "3AF");
+        //$this->view->dados = array("sala 1" => "1AF", "sala 2" => "2AF", "sala 3" => "3AF");
+        
+        // Instanciar a conexão com o BD
+        $conn = Connection::getDb();
+
+        // Instanciar o modelo
+        $aluno = new Aluno($conn);
+
+        $alunos = $aluno->getAlunos();
+
+        $this->view->dados = $alunos;
+
         $this->render('index','layout1');
     }
 

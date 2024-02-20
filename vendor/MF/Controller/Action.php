@@ -17,9 +17,7 @@ abstract class Action {
             require_once "../App/Views/".$layout.".phtml";
         } else {
             $this->content();
-        }
-
-        
+        }        
     }
 
     protected function content() {
@@ -37,5 +35,5 @@ abstract class Action {
     protected function getClassAtual() {
         return $this->classeAtual;
     }
-    
+
 }
