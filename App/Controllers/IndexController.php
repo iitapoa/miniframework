@@ -3,23 +3,17 @@
 namespace App\Controllers;
 
 use MF\Controller\Action;
-use App\Connection;
 use App\Models\Aluno;
-
-
+use App\Models\Info;
+use MF\Model\Container;
 use stdClass;
 
 class indexController extends Action {
     
     public function index() {
-        //$this->view->dados = array("sala 1" => "1AF", "sala 2" => "2AF", "sala 3" => "3AF");
-        
-        // Instanciar a conexão com o BD
-        $conn = Connection::getDb();
 
-        // Instanciar o modelo
-        $aluno = new Aluno($conn);
-
+        $aluno = Container::getModel('Aluno');
+       
         $alunos = $aluno->getAlunos();
 
         $this->view->dados = $alunos;
@@ -28,7 +22,12 @@ class indexController extends Action {
     }
 
     public function sobreNos() {
-        $this->view->dados = array("sala 4" => "4AF", "sala 5" => "5AF", "sala 6" => "6AF");
+        $info = Container::getModel('Info');
+       
+        $mat = $info->getInfo();
+
+        $this->view->dados = $mat;
+
         $this->render('sobreNos','layout2');
     }   
 

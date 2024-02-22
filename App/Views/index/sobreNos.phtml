@@ -1,12 +1,15 @@
 <h1>Sobre Nós</h1>
 <hr />
 
-<?php
-    echo "<h3>Chegamos ao IndexController e disparamos a action sobreNos</h3>";
-    echo "Listando os dados: <br />";
-    echo "<ul>";
-    foreach($this->view->dados as $indice => $valor) {
-        echo "<li>".$indice." => ".$valor."</li>";
-    }
-    echo "</ul>";
+    <h3>Chegamos ao IndexController e disparamos a action sobreNos</h3>
+    Listando os dados: <br />
+
+    <ul>
+
+    <?php foreach($this->view->dados as $indice => $mat): ?>
+        <li><?=$mat['Ano']?> => <?=$mat['numAlunos']?></li>
+    <?php endforeach; ?>
+    
+    </ul>
+
 ?>

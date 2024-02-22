@@ -4,7 +4,7 @@ namespace App\Models;
 
 use PDO;
 
-class Aluno {
+class Info {
 
     protected $db;
 
@@ -12,8 +12,8 @@ class Aluno {
         $this->db = $db;
     }
 
-    public function getAlunos() {
-        $query = "SELECT Matricula, Nome, DataNasc FROM N_Alunos LIMIT 0,20";
+    public function getInfo() {
+        $query = "SELECT count(Matricula) as numAlunos, Ano FROM N_Matricula GROUP BY Ano";
         return $this->db->query($query)->fetchAll();
     }
 }

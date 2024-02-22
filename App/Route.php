@@ -14,8 +14,8 @@ Class Route extends Bootstrap {
             'action' => 'index'
         );
 
-        $routes['sobre_nos'] = array(
-            'route' => '/sobre_nos',
+        $routes['sobrenos'] = array(
+            'route' => '/sobrenos',
             'controller' => 'indexController',
             'action' => 'sobreNos'
         );
