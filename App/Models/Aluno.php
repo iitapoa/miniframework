@@ -2,15 +2,10 @@
 
 namespace App\Models;
 
+use MF\Model\Model;
 use PDO;
 
-class Aluno {
-
-    protected $db;
-
-    public function __construct(PDO $db) {
-        $this->db = $db;
-    }
+class Aluno extends Model{
 
     public function getAlunos() {
         $query = "SELECT Matricula, Nome, DataNasc FROM N_Alunos LIMIT 0,20";

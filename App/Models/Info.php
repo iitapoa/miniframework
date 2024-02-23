@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use MF\Model\Model;
 use PDO;
 
-class Info {
+class Info extends Model {
 
     protected $db;
 
